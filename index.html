@@ -1,0 +1,200 @@
+<html>
+    <head>
+        <script src="https://kit.fontawesome.com/6700fb65a7.js" crossorigin="anonymous"></script>
+        <title>Set Alarm</title>
+    </head>
+
+    <body>
+        <div class="main-class col-7 display-flex align-item-center space-between margin-auto">
+            <div class="title-class col-5">
+                <p>Build An</p>
+                <p>Alarm Clock</p>
+                <p>in JavaScript</p>
+            </div>
+
+            <div class="clock-class col-6 align-item-center text-center">
+                <div>
+                    <img src="clock1.png" alt="clock">
+                </div>
+
+                <div id="clockTime" class="clock-time-class"></div>
+
+                <div>
+                    <form name="form1" id="form1" action="" class="col-12 display-flex space-between">
+                        <select name="hour" id="hour" class="select-class col-3 align-item-center text-center" onchange="checkUserInput()">
+                            <option value="Hour" selected="selected">Hour</option>
+                        </select>
+                        <select name="minute" id="minute" class="select-class col-3 align-item-center text-center" onchange="checkUserInput()">
+                            <option value="Minute" selected="selected">Minute</option>
+                        </select>
+                        <select name="ampm" id="ampm" class="select-class col-3 align-item-center text-center" onchange="checkUserInput()">
+                            <option value="AM/PM" selected="selected">AM/PM</option>
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                    </form>
+                </div>
+
+                <div class="align-item-center text-center button-class">
+                    <button class="col-11" disabled="disabled" id="SetOrClearButton" onclick="SetOrClearAlarm()">Set Alarm</button>
+                </div>
+
+                <audio controls style="display: none;" id="myAudio">
+                    <source src="alarm-clock-short-6402.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+    </body>
+
+    <style>
+
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    
+        html {
+            scroll-behavior: smooth;
+        }
+    
+        .text-center {
+            text-align: center;
+        }
+    
+        .display-flex {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    
+        .align-item-center {
+            align-items: center;
+        }
+    
+        .space-between {
+            justify-content: space-between;
+        }
+    
+        .space-around {
+            justify-content: space-around;
+        }
+    
+        .flex-column {
+            flex-direction: column;
+        }
+    
+        .margin-auto {
+            margin: auto;
+        }
+
+        .main-class {
+            border: 2px solid rgb(130, 58, 255);
+            border-radius: 7px;
+            background-color: rgb(158, 107, 254);
+            margin-top: 10%;
+            padding: 20px;
+        }
+
+        .title-class {
+            font-size: 40px; 
+            font-weight: bold;
+            color: white;
+            line-height: 50px;
+            margin: 10px;
+            padding: 20px;
+            border-left: 5px solid white;
+        }
+
+        .clock-class {
+            border: 1px solid rgb(129, 62, 253);
+            border-radius: 10px;
+            background-color: white;
+            margin: 10px;
+            padding: 25px;
+        }
+
+        .clock-time-class {
+            font-size: x-large;
+            font-weight: bold;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        .button-class button {
+            border: 1px solid rgb(124, 48, 255);
+            border-radius: 10px;
+            background-color: rgb(158, 107, 254);
+            margin-top: 20px;
+            padding: 10px;
+            color: white;
+            font-size: large;
+        }
+
+        .button-class button:hover {            
+            cursor: pointer;
+        }
+
+        .button-class button:disabled, button[disabled]{
+            background-color: rgba(158, 107, 254, 0.612);
+            cursor: not-allowed;
+        }
+        
+        .select-class {
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 7px;
+            font-size: medium;
+        }
+
+
+        .col-1 {
+            width: 8.33%;
+        }
+    
+        .col-2 {
+            width: 16.66%;
+        }
+    
+        .col-3 {
+            width: 25%;
+        }
+    
+        .col-4 {
+            width: 33.33%;
+        }
+    
+        .col-5 {
+            width: 41.66%;
+        }
+    
+        .col-6 {
+            width: 50%;
+        }
+    
+        .col-7 {
+            width: 58.33%;
+        }
+    
+        .col-8 {
+            width: 66.66%;
+        }
+    
+        .col-9 {
+            width: 75%;
+        }
+    
+        .col-10 {
+            width: 83.33%;
+        }
+    
+        .col-11 {
+            width: 91.66%;
+        }
+    
+        .col-12 {
+            width: 100%;
+        }
+    
+    </style>
+    <script src="script.js"></script>
+</html>
